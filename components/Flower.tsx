@@ -6,8 +6,6 @@ import {
   Text,
   Button,
 } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 const DUMMY_DOG_NAMES = [

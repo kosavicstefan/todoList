@@ -1,8 +1,6 @@
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { ITitle } from "../interface";
 
-//Kako postaviti ovaj content da ne bude any type vec da bude onaj tip koji se salje iz parent componente?
 function Title({ content }: any) {
   return (
     <View style={styles.container}>

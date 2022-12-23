@@ -1,4 +1,4 @@
-/*import React from 'react'
+import React from 'react'
 import TodoList from '../TodoList';
 import { render } from '@testing-library/react-native'
 import LinearGradient from 'expo-linear-gradient';
@@ -9,7 +9,6 @@ jest.mock('expo-linear-gradient', () => 'LinearGradient');
 jest.mock('expo-sqlite', () => {
     return {
         openDatabase: jest.fn()
-
     };
 });
 jest.mock('typeorm/browser', () => {
@@ -25,5 +24,5 @@ describe('TodoList screen', () => {
         const title = page.getByText('X')
     })
 
-}) */
+})
 

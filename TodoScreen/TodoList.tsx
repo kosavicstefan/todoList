@@ -1,10 +1,7 @@
 import * as React from "react";
 import { View, Text, Button, StyleSheet, Dimensions, TouchableOpacity, TextInput, ScrollView } from "react-native";
-import { INavigation } from "../interface";
 import { useState, useEffect } from "react";
 import { LinearGradient } from 'expo-linear-gradient';
-
-//Database
 import { AppDataSource } from "../database/AppDataSource";
 import Task from "../database/entities/Task";
 
@@ -26,10 +23,10 @@ export default function TodoList() {
   const addTask = async () => {
     const taskRepository = AppDataSource.getRepository(Task)
     const newTask = new Task()
-    newTask.task = inputValue //ovdje ide vrijednost iz inputa
+    newTask.task = inputValue
     await taskRepository.save(newTask)
     if (!inputValue) {
-      alert("Pogresan unos")
+      alert("Invalid input!")
     }
     else {
       setTodoList([...todoList, newTask])
@@ -48,7 +45,6 @@ export default function TodoList() {
     <View style={styles.background}>
       <ScrollView>
         <LinearGradient
-          // Background Linear Gradient
           colors={['#c89bff', '#d7cdf5']}>
           <View style={styles.inputFormContainer}>
             <View>
@@ -68,7 +64,6 @@ export default function TodoList() {
           </View>
         </LinearGradient>
         <LinearGradient
-          // Background Linear Gradient
           colors={['#a38dfe', '#8ad9ff']}>
           <View style={styles.scrollViewContainer}>
             <View>
@@ -166,7 +161,6 @@ const styles = StyleSheet.create({
     borderBottomEndRadius: 20,
     borderBottomLeftRadius: 20,
     borderColor: 'black',
-    //borderWidth: 1,
 
   },
   scrollViewContainer: {

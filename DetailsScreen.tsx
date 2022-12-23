@@ -1,12 +1,7 @@
 import * as React from "react";
-import { View, Text, Button, Image } from "react-native";
+import { View, Image } from "react-native";
 import Title from "./accessories/Title";
 import { INavigation } from "./interface";
-
-interface IDetailsScreen {
-  id: number;
-  text: string;
-}
 
 function DetailsScreen({ navigation, route }: INavigation) {
   return (
@@ -29,18 +24,6 @@ function DetailsScreen({ navigation, route }: INavigation) {
         }}
         source={{ uri: route.params.image }}
       />
-      {/* <Button
-      title='Go to home'
-      onPress={()=>navigation.navigate('Home')}
-      />
-      <Button
-      title='Go back'
-      onPress={()=>navigation.goBack()}
-      />
-      <Button
-      title='Go to first'
-      onPress={()=>navigation.popToTop()}
-      /> */}
     </View>
   );
 }

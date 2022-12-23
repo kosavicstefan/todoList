@@ -1,6 +1,5 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import {
   MainStackNavigator,
   ColorStackNavigator,
@@ -34,7 +33,6 @@ const BottomTabNavigator = () => {
           ),
         }}
       />
-
       <Tab.Screen
         name="TodoList"
         component={TodoListNavigator}
@@ -45,7 +43,6 @@ const BottomTabNavigator = () => {
           ),
         }}
       />
-
       <Tab.Screen
         name="NewNotifications"
         component={NewNotificationsNavigator}

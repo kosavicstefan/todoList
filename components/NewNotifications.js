@@ -41,7 +41,6 @@ export default function NewNotifications() {
         alignItems: 'center',
         justifyContent: 'space-around',
       }}>
-      {/* <Text>Your expo push token: {expoPushToken}</Text> */}
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text>Title: {notification && notification.request.content.title} </Text>
         <Text>Body: {notification && notification.request.content.body}</Text>
@@ -61,10 +60,10 @@ async function schedulePushNotification() {
   await Notifications.scheduleNotificationAsync({
     content: {
       title: "You have new notification",
-      body: 'RADEEEE NOTIFIKACIJE!',
-      data: { data: 'ovjde idu neki podaci' },
+      body: 'Your notifications are working correctly!',
+      data: { data: 'Some random data' },
     },
-    trigger: { seconds: 3 },
+    trigger: { seconds: 2 },
   });
 }
 

@@ -1,9 +1,6 @@
-import { StyleSheet, View, Text, Pressable, FlatList } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { StyleSheet, View, FlatList } from "react-native";
 import Flower from "./Flower";
 import { useState, useEffect } from "react";
-import { IFlower } from "../interface";
-import axios from "axios";
 
 export default function FlowerList() {
   const [flowersList, setFlowersList] = useState<any>([]);
@@ -29,7 +26,6 @@ export default function FlowerList() {
     </View>
   );
 }
-//<Flower {...flower} key={flower.id}/>
 const styles = StyleSheet.create({
   container: {
     margin: 10,

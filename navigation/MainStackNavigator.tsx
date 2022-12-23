@@ -1,10 +1,8 @@
 import React from "react";
-import { createStackNavigator, Header } from "@react-navigation/stack";
-
 import HomeScreen from "../HomeScreen/HomeScreen";
 import DetailsScreen from "../DetailsScreen";
 import ColorScreen from "../ColorScreen/ColorScreen";
-import TodoList from "../TodoScreen/TodoList"
+import TodoList from "../TodoScreen/TodoList";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import NewNotifications from "../components/NewNotifications";
 

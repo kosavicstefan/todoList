@@ -1,6 +1,4 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
-import { useNavigation } from '@react-navigation/native';
 import { render } from '@testing-library/react-native'
 import Flower from '../Flower';
 
@@ -12,8 +10,6 @@ jest.mock('@react-navigation/native', () => ({
 }));
 
 describe('Every dog on the page', () => {
-
-
 
     it('show dog name if exist', () => {
         const component = render(<Flower />);
