@@ -1,0 +1,34 @@
+{
+  "files": {
+    "app.js": "/kosavicstefan/todoList.git/static/js/app.37cc12e1.chunk.js",
+    "app.js.map": "/kosavicstefan/todoList.git/static/js/app.37cc12e1.chunk.js.map",
+    "runtime~app.js": "/kosavicstefan/todoList.git/static/js/runtime~app.b9837902.js",
+    "runtime~app.js.map": "/kosavicstefan/todoList.git/static/js/runtime~app.b9837902.js.map",
+    "static/js/2.d565c2aa.chunk.js": "/kosavicstefan/todoList.git/static/js/2.d565c2aa.chunk.js",
+    "static/js/2.d565c2aa.chunk.js.map": "/kosavicstefan/todoList.git/static/js/2.d565c2aa.chunk.js.map",
+    "fonts/AntDesign.ttf": "/kosavicstefan/todoList.git/./fonts/AntDesign.ttf",
+    "fonts/Entypo.ttf": "/kosavicstefan/todoList.git/./fonts/Entypo.ttf",
+    "fonts/Feather.ttf": "/kosavicstefan/todoList.git/./fonts/Feather.ttf",
+    "fonts/FontAwesome.ttf": "/kosavicstefan/todoList.git/./fonts/FontAwesome.ttf",
+    "fonts/FontAwesome5_Brands.ttf": "/kosavicstefan/todoList.git/./fonts/FontAwesome5_Brands.ttf",
+    "fonts/FontAwesome5_Solid.ttf": "/kosavicstefan/todoList.git/./fonts/FontAwesome5_Solid.ttf",
+    "fonts/Fontisto.ttf": "/kosavicstefan/todoList.git/./fonts/Fontisto.ttf",
+    "fonts/Foundation.ttf": "/kosavicstefan/todoList.git/./fonts/Foundation.ttf",
+    "fonts/Ionicons.ttf": "/kosavicstefan/todoList.git/./fonts/Ionicons.ttf",
+    "fonts/MaterialCommunityIcons.ttf": "/kosavicstefan/todoList.git/./fonts/MaterialCommunityIcons.ttf",
+    "fonts/MaterialIcons.ttf": "/kosavicstefan/todoList.git/./fonts/MaterialIcons.ttf",
+    "fonts/SimpleLineIcons.ttf": "/kosavicstefan/todoList.git/./fonts/SimpleLineIcons.ttf",
+    "favicon-16.png": "/kosavicstefan/todoList.git/favicon-16.png",
+    "favicon-32.png": "/kosavicstefan/todoList.git/favicon-32.png",
+    "favicon.ico": "/kosavicstefan/todoList.git/favicon.ico",
+    "index.html": "/kosavicstefan/todoList.git/index.html",
+    "manifest.json": "/kosavicstefan/todoList.git/manifest.json",
+    "serve.json": "/kosavicstefan/todoList.git/serve.json",
+    "static/js/2.d565c2aa.chunk.js.LICENSE.txt": "/kosavicstefan/todoList.git/static/js/2.d565c2aa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.b9837902.js",
+    "static/js/2.d565c2aa.chunk.js",
+    "static/js/app.37cc12e1.chunk.js"
+  ]
+}
