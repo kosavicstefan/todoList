@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// In App.js in a new project
+import "react-native-gesture-handler";
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "./HomeScreen/HomeScreen";
+import DetailsScreen from "./DetailsScreen";
+import { MainStackNavigator } from "./navigation/MainStackNavigator";
+import BottomTabNavigator from "./navigation/TabNavigator";
+import 'reflect-metadata';
+import { AppDataSource } from "./database/AppDataSource";
 
-export default function App() {
+import { useEffect, useState } from "react";
+
+
+function App() {
+
+  useEffect(() => {
+    const initDatabase = async () => {
+      if (!AppDataSource.isInitialized) {
+        try {
+          try {
+            await AppDataSource.initialize();
+            return console.log("Database initialization SUCESS");
+          } catch (err) {
+            return console.log("Database initialization FAILED", err);
+          }
+        } finally { }
+      } else {
+        console.log("Database initialization ALREADY")
+      }
+    }
+    initDatabase()
+  }, [])
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
