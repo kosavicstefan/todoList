@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import TabNavigator from "./navigation/TabNavigator";
 import 'reflect-metadata';
 import { AppDataSource } from "./database/AppDataSource";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function App() {
 

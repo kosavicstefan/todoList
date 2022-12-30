@@ -1,11 +1,11 @@
 import * as React from "react";
-import { View, Text, Button, StyleSheet, Dimensions, TouchableOpacity, TextInput, ScrollView } from "react-native";
+import { View, Text, Button, StyleSheet, TouchableOpacity, TextInput, ScrollView } from "react-native";
 import { useState, useEffect } from "react";
 import { LinearGradient } from 'expo-linear-gradient';
 import { AppDataSource } from "../database/AppDataSource";
 import Task from "../database/entities/Task";
 
-export default function TodoList() {
+export default function TodoList(props) {
 
   const [todoList, setTodoList] = useState<Array<Task>>([])
   const [newTask, setNewTask] = useState<Task>()

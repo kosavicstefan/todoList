@@ -11,7 +11,7 @@ describe('Color screen', () => {
 
         const startButton = page.getByTestId('buttonStart')
         fireEvent.press(startButton)
-        expect(navigation.navigate).toHaveBeenCalledWith("Home")
+        expect(navigation.navigate).toHaveBeenCalledWith("SignIn")
         const title = page.getByText('Start!')
 
     })

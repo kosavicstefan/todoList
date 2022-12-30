@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 import { INavigation } from "../interface";
-import { IImage } from "../interface";
+
 
 function ColorScreen({ navigation, route }: INavigation) {
   return (
@@ -52,7 +52,7 @@ function ColorScreen({ navigation, route }: INavigation) {
           <View style={styles.second_1}></View>
           <TouchableOpacity
             testID="buttonStart"
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("SignIn")}
             style={styles.second_2_button}
           >
             <View>
