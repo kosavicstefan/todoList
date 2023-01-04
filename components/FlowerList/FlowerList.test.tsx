@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react-native'
-import Flower from './Flower';
+import FlowerList from './FlowerList';
 
 const mockedUsedNavigate = jest.fn();
 
@@ -12,8 +12,7 @@ jest.mock('@react-navigation/native', () => ({
 describe('Every dog on the page', () => {
 
     it('show dog name if exist', () => {
-        const imageUrl = 'https://example.com/image.jpg';
-        const component = render(<Flower props={imageUrl} />);
+        const component = render(<FlowerList />);
         const button = component.findByTestId('dogNames');
         expect(button).toBeDefined()
 

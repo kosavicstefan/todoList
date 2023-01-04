@@ -29,7 +29,7 @@ const Flower = (props: FlowerProps) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity
+    <TouchableOpacity testID="flowerButton"
       onPress={() => {
         navigation.navigate("Details", { image: props.props });
       }}

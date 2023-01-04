@@ -4,7 +4,7 @@ import Flower from "../Flower/Flower";
 import React, { useState, useEffect } from "react";
 
 export default function FlowerList() {
-  const [flowersList, setFlowersList] = useState<Array<string>>([]);
+  const [flowersList, setFlowersList] = useState<Array<string>>();
 
   const getData = async () => {
     fetch("https://dog.ceo/api/breeds/image/random/3")
@@ -19,7 +19,7 @@ export default function FlowerList() {
   return (
     <View style={styles.container}>
       <View>
-        <FlatList
+        <FlatList testID="list"
           data={flowersList}
           renderItem={({ item }) => <Flower props={item} key={item.length} />}
           keyExtractor={(item) => item}

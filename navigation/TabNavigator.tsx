@@ -3,58 +3,58 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   MainStackNavigator,
   ColorStackNavigator,
-  TodoListNavigator,
   NewNotificationsNavigator,
 } from "./MainStackNavigator";
 import { Ionicons } from "@expo/vector-icons";
 
+interface ITabs {
+  name: string;
+  component: typeof ColorStackNavigator
+  icon: IconName
+}
+
+type IconName = keyof typeof Ionicons.glyphMap
+
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator = () => {
-  return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+const tabs = [
+  {
+    name: 'Colors',
+    component: ColorStackNavigator,
+    icon: 'aperture-outline' as IconName
+  },
+  {
+    name: 'Home',
+    component: ColorStackNavigator,
+    icon: 'home' as IconName
+  }, {
+    name: 'TodoList',
+    component: MainStackNavigator,
+    icon: 'TodoListNavigator' as IconName
+  }, {
+    name: 'NewNotifications',
+    component: NewNotificationsNavigator,
+    icon: 'notifications-outline' as IconName
+  },
+]
+
+const BottomTabNavigator = () => (
+  <Tab.Navigator screenOptions={{ headerShown: false }}>
+    {tabs.map((tab: ITabs) => (
       <Tab.Screen
-        name="Colors"
-        component={ColorStackNavigator}
+        key={tab.name}
+        name={tab.name}
+        component={tab.component}
         options={{
-          tabBarLabel: "Colors",
+          tabBarLabel: tab.name,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="aperture-outline" color={color} size={size} />
+            <Ionicons name={tab.icon} color={color} size={size} />
           ),
         }}
       />
-      <Tab.Screen
-        name="Home"
-        component={MainStackNavigator}
-        options={{
-          tabBarLabel: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="TodoList"
-        component={TodoListNavigator}
-        options={{
-          tabBarLabel: "TodoList",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="list-outline" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="NewNotifications"
-        component={NewNotificationsNavigator}
-        options={{
-          tabBarLabel: "Notifications",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="notifications-outline" color={color} size={size} />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
-};
+    ))}
+
+  </Tab.Navigator>
+)
 
 export default BottomTabNavigator;
