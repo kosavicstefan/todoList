@@ -5,7 +5,7 @@ import CustomInput from '../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
 
 
-const ForgotPassword = ({ navigation, route }: INavigation) => {
+const ForgotPassword = ({ navigation }: INavigation) => {
 
     const [username, setUsername] = useState<string>()
 

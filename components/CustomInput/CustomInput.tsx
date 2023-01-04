@@ -1,5 +1,6 @@
 import { View, TextInput, StyleSheet } from 'react-native'
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const CustomInput = ({ placeholder, value, setValue, secureTextEntry }) => {
     return (
@@ -23,5 +24,12 @@ const styles = StyleSheet.create({
     },
 
 });
+
+CustomInput.propTypes = {
+    placeholder: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    setValue: PropTypes.func.isRequired,
+    secureTextEntry: PropTypes.bool
+};
 
 export default CustomInput

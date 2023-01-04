@@ -5,10 +5,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { AppDataSource } from "../database/AppDataSource";
 import Task from "../database/entities/Task";
 
-export default function TodoList(props) {
+export default function TodoList() {
 
   const [todoList, setTodoList] = useState<Array<Task>>([])
-  const [newTask, setNewTask] = useState<Task>()
   const [inputValue, setInputValue] = useState<string>()
 
   useEffect(() => {

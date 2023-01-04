@@ -1,16 +1,18 @@
+
 import { StyleSheet, View, FlatList } from "react-native";
 import Flower from "./Flower";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function FlowerList() {
-  const [flowersList, setFlowersList] = useState<any>([]);
+  const [flowersList, setFlowersList] = useState<Array<string>>([]);
+
+  const getData = async () => {
+    fetch("https://dog.ceo/api/breeds/image/random/3")
+      .then((response) => response.json())
+      .then((data) => setFlowersList(data.message));
+  };
 
   useEffect(() => {
-    const getData = async () => {
-      fetch("https://dog.ceo/api/breeds/image/random/3")
-        .then((response) => response.json())
-        .then((data) => setFlowersList(data.message));
-    };
     getData();
   }, []);
 

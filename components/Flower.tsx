@@ -1,4 +1,4 @@
-import {
+import React, {
   StyleSheet,
   View,
   Image,
@@ -21,7 +21,11 @@ const DUMMY_DOG_NAMES = [
   "Malzahar",
 ];
 
-const Flower = (props: any) => {
+interface FlowerProps {
+  props: string;
+}
+
+const Flower = (props: FlowerProps) => {
   const navigation = useNavigation();
 
   return (

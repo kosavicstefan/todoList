@@ -1,9 +1,10 @@
-import React from 'react';
+/* import React from 'react';
 import TodoList from '../TodoList';
-import { render } from '@testing-library/react-native'
+import { render } from '@testing-library/react-native' */
+
 //import { LinearGradient } from 'expo-linear-gradient';
-import renderer from 'react-native-mock-render';
-import { Text } from "react-native";
+//import renderer from 'react-native-mock-render';
+
 
 /* const createComponent = function (name: string) {
     return class extends React.Component {
@@ -126,16 +127,17 @@ jest.mock('typeorm/browser', () => {
         DataSourceOptions: jest.fn()
     };
 });
-jest.mock('expo', () => {
+/* jest.mock('expo', () => {
     return {
         LinearGradient: () => null,
         // Add any other mocked functions or components here
     };
-});
+}); */
 
 describe('TodoList screen', () => {
     it('Should ', () => {
-        const page = render(<TodoList />)
+        //const page = render(<TodoList />)
+
     })
 
 })

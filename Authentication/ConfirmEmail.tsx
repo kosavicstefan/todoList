@@ -5,7 +5,7 @@ import CustomInput from '../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
 
 
-const ConfirmEmail = ({ navigation, route }: INavigation) => {
+const ConfirmEmail = ({ navigation }: INavigation) => {
 
     const [code, setCode] = useState<string>()
 
@@ -17,7 +17,7 @@ const ConfirmEmail = ({ navigation, route }: INavigation) => {
         console.log('Resend code')
     }
 
-    const onSignInPressed = () => {
+    const onSignUpPressed = () => {
         navigation.navigate('SignUp')
     }
 
@@ -32,7 +32,7 @@ const ConfirmEmail = ({ navigation, route }: INavigation) => {
 
                 <CustomButton onPress={onResendPressed} text={'Resend code'} type='SECONDARY' />
 
-                <CustomButton onPress={onSignInPressed} text={'Back to Register'} type='TERNARY' />
+                <CustomButton onPress={onSignUpPressed} text={'Back to Register'} type='TERNARY' />
             </View>
         </ScrollView>
     )

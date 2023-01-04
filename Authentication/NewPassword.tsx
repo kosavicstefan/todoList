@@ -5,7 +5,7 @@ import CustomInput from '../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
 
 
-const NewPassword = ({ navigation, route }: INavigation) => {
+const NewPassword = ({ navigation }: INavigation) => {
 
     const [code, setCode] = useState<string>()
     const [newPassword, setNewPassword] = useState<string>()
@@ -44,13 +44,6 @@ const styles = StyleSheet.create({
         marginVertical: 25,
         marginHorizontal: 10
     },
-    text: {
-        color: 'gray',
-        marginVertical: 10
-    },
-    link: {
-        color: '#FDB075'
-    }
 });
 
 

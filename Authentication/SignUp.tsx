@@ -5,7 +5,7 @@ import CustomInput from '../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
 import SocialSignInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
 
-const SignUp = ({ navigation, route }: INavigation) => {
+const SignUp = ({ navigation }: INavigation) => {
 
     const [username, setUsername] = useState<string>()
     const [email, setEmail] = useState<string>()

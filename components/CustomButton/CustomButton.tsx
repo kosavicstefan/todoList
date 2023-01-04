@@ -1,5 +1,6 @@
 import { Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const CustomButton = ({ onPress, text, type = 'PRIMARY', bgColor = undefined, fgColor = undefined }) => {
     return (
@@ -56,5 +57,14 @@ const styles = StyleSheet.create({
     },
 
 });
+
+
+CustomButton.propTypes = {
+    onPress: PropTypes.func.isRequired,
+    text: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    bgColor: PropTypes.string,
+    fgColor: PropTypes.string
+};
 
 export default CustomButton

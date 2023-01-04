@@ -1,17 +1,16 @@
-import { View, Text, Image, StyleSheet, Dimensions, ScrollView } from 'react-native'
+import { View, Image, StyleSheet, Dimensions, ScrollView, ImageSourcePropType } from 'react-native'
 import { INavigation } from "../interface";
 import React, { useState } from 'react'
 import CustomInput from '../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
 import SocialSignInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
-import { NativeScreenNavigationContainer } from 'react-native-screens';
 
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
-const SignIn = ({ navigation, route }: INavigation) => {
+const SignIn = ({ navigation }: INavigation) => {
     const [username, setUsername] = useState<string>()
-    const [password, setPassword] = useState<string>()
+    const [, setPassword] = useState<string>()
 
     const onSignInPressed = () => {
         //provjeri dal je username i sifra dobra pa tek onda navigiraj na home
@@ -30,11 +29,8 @@ const SignIn = ({ navigation, route }: INavigation) => {
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container}>
                 <Image
-
                     style={styles.logo}
-                    source={{
-                        uri: "https://www.valens.dev/images/valens-logo-og.jpg" as any,
-                    }}
+                    source={"https://www.valens.dev/images/valens-logo-og.jpg" as ImageSourcePropType}
                 />
                 <CustomInput placeholder={'Username'} value={username} setValue={setUsername} secureTextEntry={false} />
                 <CustomInput placeholder={'Password'} value={username} setValue={setPassword} secureTextEntry />
