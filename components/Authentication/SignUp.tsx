@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
-import { INavigation } from "../interface";
+import { INavigation } from "../../interface";
 import React, { useState } from 'react'
-import CustomInput from '../components/CustomInput/CustomInput';
-import CustomButton from '../components/CustomButton/CustomButton';
-import SocialSignInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
+import CustomInput from '../CustomInput/CustomInput';
+import CustomButton from '../CustomButton/CustomButton';
+import SocialSignInButtons from '../SocialSignInButtons/SocialSignInButtons';
 
 const SignUp = ({ navigation }: INavigation) => {
 
@@ -13,7 +13,6 @@ const SignUp = ({ navigation }: INavigation) => {
     const [passwordRepeat, setPasswordRepeat] = useState<string>()
 
     const onRegisterPressed = () => {
-        //zasad odmah navigira na confirm register. Ubaciti provjeru prije navigacije
         navigation.navigate('ConfirmEmail')
     }
 

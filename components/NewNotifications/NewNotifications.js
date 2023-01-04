@@ -12,7 +12,7 @@ Notifications.setNotificationHandler({
 });
 
 export default function NewNotifications() {
-  const [expoPushToken, setExpoPushToken] = useState('');
+  const [, setExpoPushToken] = useState('');
   const [notification, setNotification] = useState(false);
   const notificationListener = useRef();
   const responseListener = useRef();

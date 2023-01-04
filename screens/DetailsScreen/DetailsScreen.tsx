@@ -1,9 +1,9 @@
 import * as React from "react";
 import { View, Image } from "react-native";
-import Title from "./accessories/Title";
-import { INavigation } from "./interface";
+import Title from "../../components/Title/Title";
+import { INavigation } from "../../interface";
 
-function DetailsScreen({ navigation, route }: INavigation) {
+function DetailsScreen({ route }: INavigation) {
   return (
     <View
       style={{

@@ -2,8 +2,8 @@ import * as React from "react";
 import { View, Text, Button, StyleSheet, TouchableOpacity, TextInput, ScrollView } from "react-native";
 import { useState, useEffect } from "react";
 import { LinearGradient } from 'expo-linear-gradient';
-import { AppDataSource } from "../database/AppDataSource";
-import Task from "../database/entities/Task";
+import { AppDataSource } from "../../database/configuration/AppDataSource";
+import Task from "../../database/entities/Task";
 
 export default function TodoList() {
 

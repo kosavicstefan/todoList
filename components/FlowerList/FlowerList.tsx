@@ -1,6 +1,6 @@
 
 import { StyleSheet, View, FlatList } from "react-native";
-import Flower from "./Flower";
+import Flower from "../Flower/Flower";
 import React, { useState, useEffect } from "react";
 
 export default function FlowerList() {

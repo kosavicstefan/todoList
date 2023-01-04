@@ -1,9 +1,9 @@
 import { View, Image, StyleSheet, Dimensions, ScrollView, ImageSourcePropType } from 'react-native'
-import { INavigation } from "../interface";
+import { INavigation } from "../../interface";
 import React, { useState } from 'react'
-import CustomInput from '../components/CustomInput/CustomInput';
-import CustomButton from '../components/CustomButton/CustomButton';
-import SocialSignInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
+import CustomInput from '../CustomInput/CustomInput';
+import CustomButton from '../CustomButton/CustomButton';
+import SocialSignInButtons from '../SocialSignInButtons/SocialSignInButtons';
 
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
@@ -13,7 +13,6 @@ const SignIn = ({ navigation }: INavigation) => {
     const [, setPassword] = useState<string>()
 
     const onSignInPressed = () => {
-        //provjeri dal je username i sifra dobra pa tek onda navigiraj na home
         navigation.navigate('Home')
     }
 

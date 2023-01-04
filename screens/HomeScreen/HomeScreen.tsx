@@ -1,8 +1,8 @@
 import * as React from "react";
 import { View, StyleSheet } from "react-native";
-import { INavigation } from "../interface";
-import FlowerList from "../components/FlowerList";
-import Title from "../accessories/Title";
+import { INavigation } from "../../interface";
+import FlowerList from "../../components/FlowerList/FlowerList";
+import Title from "../../components/Title/Title";
 
 function HomeScreen({ navigation, route }: INavigation) {
   return (

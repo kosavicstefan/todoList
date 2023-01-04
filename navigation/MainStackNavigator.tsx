@@ -1,15 +1,15 @@
 import React from "react";
-import HomeScreen from "../HomeScreen/HomeScreen";
-import SignIn from "../Authentication/SignIn";
-import SignUp from "../Authentication/SignUp";
-import DetailsScreen from "../DetailsScreen";
-import ColorScreen from "../ColorScreen/ColorScreen";
-import TodoList from "../TodoScreen/TodoList";
+import HomeScreen from "../screens/HomeScreen/HomeScreen";
+import SignIn from "../components/Authentication/SignIn";
+import SignUp from "../components/Authentication/SignUp";
+import DetailsScreen from "../screens/DetailsScreen/DetailsScreen";
+import ColorScreen from "../screens/ColorScreen/ColorScreen";
+import TodoList from "../screens/TodoScreen/TodoList";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import NewNotifications from "../components/NewNotifications";
-import ConfirmEmail from "../Authentication/ConfirmEmail";
-import ForgotPassword from "../Authentication/ForgotPassword";
-import NewPassword from "../Authentication/NewPassword";
+import NewNotifications from "../components/NewNotifications/NewNotifications";
+import ConfirmEmail from "../components/Authentication/ConfirmEmail";
+import ForgotPassword from "../components/Authentication/ForgotPassword";
+import NewPassword from "../components/Authentication/NewPassword";
 
 type RootStackParamList = {
   Colors: undefined;

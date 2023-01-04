@@ -1,7 +1,11 @@
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-function Title({ content }: any) {
+interface TitleProps {
+  content: string;
+}
+
+function Title({ content }: TitleProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{content}</Text>

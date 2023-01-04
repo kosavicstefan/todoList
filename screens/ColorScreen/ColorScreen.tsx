@@ -1,6 +1,6 @@
 import * as React from "react";
 import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
-import { INavigation } from "../interface";
+import { INavigation } from "../../interface";
 
 
 function ColorScreen({ navigation, route }: INavigation) {
