@@ -10,6 +10,7 @@ import NewNotifications from "../components/NewNotifications/NewNotifications";
 import ConfirmEmail from "../components/Authentication/ConfirmEmail";
 import ForgotPassword from "../components/Authentication/ForgotPassword";
 import NewPassword from "../components/Authentication/NewPassword";
+import FirebaseCRUD from "../components/Firebase/FirebaseCRUD"
 
 type RootStackParamList = {
   Colors: undefined;
@@ -21,7 +22,8 @@ type RootStackParamList = {
   Home: { image: string };
   Details: { image: string };
   TodoList: undefined;
-  NewNotifications: undefined
+  NewNotifications: undefined;
+  FirebaseCRUD: undefined;
 };
 
 declare global {
@@ -73,4 +75,12 @@ const NewNotificationsNavigator = () => {
   );
 };
 
-export { MainStackNavigator, ColorStackNavigator, TodoListNavigator, NewNotificationsNavigator };
+const FirebaseNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="FirebaseCRUD" component={FirebaseCRUD} />
+    </Stack.Navigator>
+  );
+};
+
+export { MainStackNavigator, ColorStackNavigator, TodoListNavigator, NewNotificationsNavigator, FirebaseNavigator };

@@ -5,6 +5,9 @@ import TabNavigator from "./navigation/TabNavigator";
 import 'reflect-metadata';
 import { AppDataSource } from "./database/configuration/AppDataSource";
 import { useEffect } from "react";
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient()
 
 function App() {
 
@@ -27,9 +30,11 @@ function App() {
   }, [])
 
   return (
-    <NavigationContainer>
-      <TabNavigator />
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }
 

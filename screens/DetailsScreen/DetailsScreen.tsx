@@ -4,6 +4,7 @@ import Title from "../../components/Title/Title";
 import { INavigation } from "../../interface";
 
 function DetailsScreen({ route }: INavigation) {
+
   return (
     <View
       style={{
@@ -24,6 +25,7 @@ function DetailsScreen({ route }: INavigation) {
         }}
         source={{ uri: route.params.image }}
       />
+
     </View>
   );
 }
