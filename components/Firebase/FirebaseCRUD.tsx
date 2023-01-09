@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import CustomInput from '../CustomInput/CustomInput'
 import CustomButton from '../CustomButton/CustomButton'
@@ -54,7 +54,9 @@ const Firebase = () => {
                 <FlatList
                     data={users}
                     renderItem={({ item }) => (
-                        <Text>{item.name}</Text>
+                        <View style={styles.item}>
+                            <Text>{item.name}</Text>
+                        </View>
                     )}
                 />
             </View>
@@ -63,3 +65,19 @@ const Firebase = () => {
 }
 
 export default Firebase
+
+const styles = StyleSheet.create({
+    item: {
+        padding: 15,
+        marginHorizontal: 50,
+        marginVertical: 10,
+        borderWidth: 1,
+        borderColor: 'gray',
+        borderRadius: 5,
+        textAlign: 'center',
+        fontSize: 16,
+        alignItems: 'center',
+        backgroundColor: 'lightgray'
+
+    }
+});

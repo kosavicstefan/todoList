@@ -1,12 +1,8 @@
-import { View, TextInput, StyleSheet, NativeSyntheticEvent, TextInputChangeEventData } from 'react-native'
+import { View, TextInput, StyleSheet} from 'react-native'
 import React from 'react'
 import PropTypes from 'prop-types';
 
 const CustomInput = ({ placeholder, value, setValue, secureTextEntry }) => {
-
-    const setF = (e: NativeSyntheticEvent<TextInputChangeEventData>) => {
-        console.log(e, e.target.value)
-    }
 
     return (
         <View style={styles.container}>
