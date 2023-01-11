@@ -11,6 +11,11 @@ import ConfirmEmail from "../components/Authentication/ConfirmEmail";
 import ForgotPassword from "../components/Authentication/ForgotPassword";
 import NewPassword from "../components/Authentication/NewPassword";
 import FirebaseCRUD from "../components/Firebase/FirebaseCRUD"
+import Restaurants from "../components/Restaurants/Restaurants";
+import Card from "../components/Card/Card"
+import RestaurantsDetails from '../components/RestaurantsDetails/RestaurantsDetails'
+
+
 
 type RootStackParamList = {
   Colors: undefined;
@@ -24,6 +29,9 @@ type RootStackParamList = {
   TodoList: undefined;
   NewNotifications: undefined;
   FirebaseCRUD: undefined;
+  Restaurants: undefined;
+  Card: { title: string, image: string }
+  RestaurantsDetails: any;
 };
 
 declare global {
@@ -39,7 +47,6 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const MainStackNavigator = () => {
   return (
     <Stack.Navigator>
-
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
@@ -71,6 +78,9 @@ const NewNotificationsNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="NewNotifications" component={NewNotifications} />
+      <Stack.Screen name="Card" component={Card} />
+      <Stack.Screen name="RestaurantsDetails" component={RestaurantsDetails} />
+      <Stack.Screen name="Restaurants" component={Restaurants} />
     </Stack.Navigator>
   );
 };

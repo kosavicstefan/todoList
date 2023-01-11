@@ -2,6 +2,7 @@ import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import React, { useState, useEffect, useRef } from 'react';
 import { Text, View, Button, Platform } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -16,6 +17,8 @@ export default function NewNotifications() {
   const [notification, setNotification] = useState(false);
   const notificationListener = useRef();
   const responseListener = useRef();
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
@@ -34,6 +37,10 @@ export default function NewNotifications() {
     };
   }, []);
 
+  const showRestaurants = () => {
+    navigation.navigate("Restaurants")
+  }
+
   return (
     <View
       style={{
@@ -51,6 +58,11 @@ export default function NewNotifications() {
         onPress={async () => {
           await schedulePushNotification();
         }}
+      />
+
+      <Button
+        title="Restaurants"
+        onPress={showRestaurants}
       />
     </View>
   );
