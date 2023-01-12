@@ -9,7 +9,7 @@ const windowHeight = Dimensions.get('window').height;
 interface ICardDetails {
     title: string,
     description: string,
-    image: any
+    image: string
 }
 
 const CardDetails = ({ title, description, image }: ICardDetails) => {
@@ -22,7 +22,7 @@ const CardDetails = ({ title, description, image }: ICardDetails) => {
                 <Text style={styles.title}>{title}</Text>
             </View>
             <View style={styles.description}>
-                <Text>{description}</Text>
+                <Text style={styles.descriptionText}>{description}</Text>
             </View>
         </View>
     )
@@ -63,6 +63,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
         width: windowWidth * 0.5,
-        fontSize: 16
+
+    },
+    descriptionText: {
+        fontSize: 16,
+        textAlign: 'center'
     }
 });

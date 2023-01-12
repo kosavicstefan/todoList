@@ -24,7 +24,6 @@ const Card = ({ title, image }: ICard) => {
         </View>
     )
 }
-
 export default Card
 
 const styles = StyleSheet.create({

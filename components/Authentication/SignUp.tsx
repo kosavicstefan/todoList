@@ -4,15 +4,28 @@ import React, { useState } from 'react'
 import CustomInput from '../CustomInput/CustomInput';
 import CustomButton from '../CustomButton/CustomButton';
 import SocialSignInButtons from '../SocialSignInButtons/SocialSignInButtons';
+import { auth } from '../Firebase/firebase';
+import 'firebase/auth';
 
 const SignUp = ({ navigation }: INavigation) => {
-
     const [username, setUsername] = useState<string>()
     const [email, setEmail] = useState<string>()
     const [password, setPassword] = useState<string>()
     const [passwordRepeat, setPasswordRepeat] = useState<string>()
 
     const onRegisterPressed = () => {
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+            });
+
         navigation.navigate('ConfirmEmail')
     }
 

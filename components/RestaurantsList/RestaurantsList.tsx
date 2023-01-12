@@ -5,11 +5,23 @@ import Card from "../Card/Card";
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
 
+export interface IAttributes {
+    Name: string,
+    Description: string,
+    createdAt: string,
+    updatedAt: string,
+    publishedAt: string
+}
+export interface IData {
+    id: number,
+    attributes: IAttributes
+}
+
 export default function RestaurantsList() {
 
     const navigation = useNavigation();
 
-    const restaurantDetails = (item: any) => {
+    const restaurantDetails = (item: IData) => {
         navigation.navigate('RestaurantsDetails', { item })
     }
 
@@ -22,8 +34,7 @@ export default function RestaurantsList() {
             return response.json();
         }
     );
-    /* console.log("TITLE: ", restaurantsList.data[0].attributes.Name)
-    console.log("PICTURE: ", 'http://localhost:1337' + restaurantsList.data[0].attributes.pictures.data[0].attributes.url) */
+
     return (
         <View style={styles.container}>
             {isLoading ? (
