@@ -1,16 +1,40 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, Alert } from 'react-native'
 import { INavigation } from "../../interface";
 import React, { useState } from 'react'
 import CustomInput from '../CustomInput/CustomInput';
 import CustomButton from '../CustomButton/CustomButton';
-
+import { getAuth, sendPasswordResetEmail } from "@firebase/auth";
 
 const ForgotPassword = ({ navigation }: INavigation) => {
 
-    const [username, setUsername] = useState<string>()
+    const [email, setEmail] = useState<string>()
 
     const onSendPressed = () => {
-        navigation.navigate('NewPassword')
+        const auth = getAuth();
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                Alert.alert(
+                    'Email sent',
+                    'Confirmation for password change was sent to your email.',
+                    [
+                        { text: 'OK', onPress: () => console.log('OK Pressed') },
+                    ],
+                    { cancelable: false },
+                );
+                setEmail('')
+                navigation.navigate('SignIn')
+            })
+            .catch((error) => {
+                Alert.alert(
+                    'Error',
+                    'There was an error sending your email. Check if you entered right email.',
+                    [
+                        { text: 'OK', onPress: () => console.log(error) },
+                    ],
+                    { cancelable: false },
+                );
+                setEmail('')
+            });
     }
 
     const onSignInPressed = () => {
@@ -21,9 +45,9 @@ const ForgotPassword = ({ navigation }: INavigation) => {
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container}>
                 <Text style={styles.title}>Reset your password</Text>
-                <CustomInput placeholder={'Password'} value={username} setValue={setUsername} secureTextEntry />
+                <CustomInput placeholder={'Enter your email'} value={email} setValue={setEmail} />
 
-                <CustomButton onPress={onSendPressed} text={'Send'} />
+                <CustomButton onPress={onSendPressed} text={'Change password'} />
 
                 <CustomButton onPress={onSignInPressed} text={'Back to Sign in'} type='TERNARY' />
             </View>

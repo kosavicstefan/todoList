@@ -16,14 +16,13 @@ const SignUp = ({ navigation }: INavigation) => {
     const onRegisterPressed = () => {
         auth.createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                // Signed in 
                 const user = userCredential.user;
-                // ...
+                user.sendEmailVerification();
+                console.log("Tu", user)
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                // ..
             });
 
         navigation.navigate('ConfirmEmail')

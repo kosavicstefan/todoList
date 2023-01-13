@@ -4,7 +4,7 @@ import CustomInput from '../CustomInput/CustomInput'
 import CustomButton from '../CustomButton/CustomButton'
 import { useState, useEffect } from "react";
 import database from "../../components/Firebase/firebase";
-import firebase from 'firebase';
+import firebase from 'firebase/compat';
 import { FlatList } from 'react-native-gesture-handler';
 
 const Firebase = () => {
@@ -21,7 +21,6 @@ const Firebase = () => {
                 users.push(name)
             })
             setUsers(users)
-            console.log("Tu su useri: ", users)
         })
     }
 
