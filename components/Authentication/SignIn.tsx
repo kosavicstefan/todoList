@@ -28,7 +28,6 @@ const SignIn = ({ navigation }: INavigation) => {
                             { text: 'OK', onPress: () => console.log('OK Pressed') },
                         ],
                         { cancelable: false },
-
                     );
                 }
                 setEmail('')
