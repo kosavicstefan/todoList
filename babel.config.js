@@ -7,6 +7,7 @@ module.exports = function (api) {
       '@babel/transform-react-jsx-source',
       '@babel/plugin-transform-modules-commonjs',
       'babel-plugin-transform-typescript-metadata',
+      'react-native-reanimated/plugin',
     ]
   };
 };

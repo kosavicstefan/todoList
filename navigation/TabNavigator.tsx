@@ -4,6 +4,8 @@ import {
   MainStackNavigator,
   ColorStackNavigator,
   NewNotificationsNavigator,
+  TodoListNavigator,
+  FirebaseNavigator
 } from "./MainStackNavigator";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -25,16 +27,23 @@ const tabs = [
   },
   {
     name: 'Home',
-    component: ColorStackNavigator,
-    icon: 'home' as IconName
-  }, {
-    name: 'TodoList',
     component: MainStackNavigator,
-    icon: 'TodoListNavigator' as IconName
-  }, {
+    icon: 'home' as IconName
+  },
+  {
+    name: 'TodoList',
+    component: TodoListNavigator,
+    icon: 'list-outline' as IconName
+  },
+  {
     name: 'NewNotifications',
     component: NewNotificationsNavigator,
     icon: 'notifications-outline' as IconName
+  },
+  {
+    name: 'Firebase',
+    component: FirebaseNavigator,
+    icon: 'logo-firebase' as IconName
   },
 ]
 
