@@ -3,17 +3,20 @@ import { View, StyleSheet } from "react-native";
 import { INavigation } from "../../interface";
 import FlowerList from "../../components/FlowerList/FlowerList";
 import Title from "../../components/Title/Title";
+import { ScrollView } from "react-native-gesture-handler";
 
 function HomeScreen({ navigation, route }: INavigation) {
   return (
-    <View style={styles.container}>
-      <View testID="titleHome">
-        <Title content={"Dog album"} />
+    <ScrollView>
+      <View style={styles.container}>
+        <View testID="titleHome">
+          <Title content={"Dog album"} />
+        </View>
+        <View style={styles.list}>
+          <FlowerList />
+        </View>
       </View>
-      <View style={styles.list}>
-        <FlowerList />
-      </View>
-    </View>
+    </ScrollView>
   );
 }
 

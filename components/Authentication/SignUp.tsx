@@ -55,7 +55,7 @@ const SignUp = ({ navigation }: INavigation) => {
                     <Text style={styles.link} onPress={onPrivacyPressed}>Privacy Policy</Text>
                 </Text>
 
-                <SocialSignInButtons />
+                {/* <SocialSignInButtons /> */}
 
                 <CustomButton onPress={onSignIn} text={"Have an account? Sign in"} type='TERTIARY' />
 

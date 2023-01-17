@@ -6,6 +6,7 @@ import 'reflect-metadata';
 import { AppDataSource } from "./database/configuration/AppDataSource";
 import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from 'react-query';
+import DrawerNavigator from "./navigation/DrawerNavigator";
 
 const queryClient = new QueryClient()
 
@@ -32,7 +33,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
-        <TabNavigator />
+        {/*   <TabNavigator /> */}
+        <DrawerNavigator />
       </NavigationContainer>
     </QueryClientProvider>
   );

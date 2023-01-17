@@ -62,7 +62,7 @@ const SignIn = ({ navigation }: INavigation) => {
                 <CustomButton onPress={onSignInPressed} text={'Sign in!'} />
                 <CustomButton onPress={onForgotPressed} text={'Forgot password?'} type='TERTIARY' />
 
-                <SocialSignInButtons />
+                {/* <SocialSignInButtons /> */}
 
                 <CustomButton onPress={onSignUp} text={"Don't have an account? Create one"} type='TERTIARY' />
 

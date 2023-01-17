@@ -1,17 +1,42 @@
 import React from 'react'
 import CustomButton from '../CustomButton/CustomButton'
-import { getAuth, signInWithRedirect, GoogleAuthProvider, getRedirectResult } from "@firebase/auth";
+import { getAuth, signInWithRedirect, GoogleAuthProvider, getRedirectResult, signInWithPopup } from "@firebase/auth";
+import { FacebookAuthProvider } from 'expo-firebase-auth';
+import { } from "firebase/auth";
 import 'firebase/compat/auth';
-
-
-
-
 
 const SocialSignInButtons = () => {
 
-  const onSignInFacebook = () => {
-    console.log('Facebook!')
-  }
+  const onSignInFacebook = async () => {
+    const facebookAppId = '6261271913929608';
+    const auth = getAuth()
+    const provider = new FacebookAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+        console.log('Facebook radi: ', user)
+
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+        console.log('Ovdje je facebook greska: ', errorCode, errorMessage)
+
+        // ...
+      });
+  };
+
 
   const onSignInGoogle = () => {
 
